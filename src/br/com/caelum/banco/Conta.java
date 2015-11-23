@@ -8,14 +8,16 @@ public class Conta {
 	double salario;
 	public Cliente titular;
 
-	boolean saca(double valor) {
-		if (this.saldo < valor) {
-			return false;
-		} else {
-			this.saldo = this.saldo - valor;
-			return true;
-		}
-	}
+	public boolean saca(double quantidade) {
+	    // posso sacar até saldo+limite
+	    if (quantidade > this.saldo + this.limite) { 
+	            System.out.println("Não posso sacar fora do limite!");
+	            return false;
+	        } else {
+	            this.saldo = this.saldo - quantidade;
+	            return true;
+	        }
+	    }
 
 	void atualiza(double taxa) {
 		this.saldo = this.saldo + this.saldo * taxa;
@@ -33,6 +35,12 @@ public class Conta {
 	}
 
 	public void deposita(double quantidade) {
+		if (quantidade < 0)
+			try {
+				throw new ValorInvalidoException(quantidade);
+			} catch (ValorInvalidoException e) {
+				System.out.println(e.getMessage());
+			}
 		this.saldo += quantidade;
 	}
 
