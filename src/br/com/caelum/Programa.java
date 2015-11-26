@@ -1,6 +1,9 @@
 package br.com.caelum;
 
+import java.io.PrintStream;
+
 import br.com.caelum.banco.Conta;
+import br.com.caelum.banco.ContaCorrente;
 import br.com.caelum.banco.ValorInvalidoException;
 
 public class Programa {
@@ -26,20 +29,25 @@ public class Programa {
 
 		System.out.println("_____________Aplicação BANCO______________\n");
 
-		Conta minhaConta = new Conta();
-		minhaConta.deposita(-100);
+		Conta minhaConta = new ContaCorrente();
+		Conta conta1 = new ContaCorrente();
+		minhaConta.deposita(200);
+		conta1.deposita(100);
 		
-		minhaConta.setLimite(100);
-		if (!minhaConta.saca(1000)) {
-			System.out.println("Não saquei");
-		}
-		// o saldo é -900? É 100? É 0? A chamada ao método saca funcionou?
-		System.out.printf("O saldo é: %.2f", minhaConta.getSaldo());
-
+		String nome = "Socorram-me, subi no ônibus em Marrocos";
 		
+		imprimeInvertido(nome);
 
 	}
 
-	
+	static void imprimeInvertido(String s){
+		String[] v = s.split(" ");
+		
+		for (int i = v.length - 1; i>=0; i--) {
+			System.out.print(v[i] + " ");
+		}
+		
+		
+	}
 
 }
