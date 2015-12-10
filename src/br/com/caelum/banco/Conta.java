@@ -2,24 +2,50 @@ package br.com.caelum.banco;
 
 public class Conta {
 
-	int numero;
+	protected int numero;
 	String dono;
 	protected double saldo;
 	double limite;
 	double salario;
 	public Cliente titular;
 
+	
+	
+	public Conta(int i, String string) {
+		this.numero = i;
+		this.dono = string;
+	}
+
+	public Conta() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + numero;
+		return result;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
-		Conta outraConta = (Conta) obj;
-
-		return this.numero == outraConta.numero;
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		if (numero != other.numero)
+			return false;
+		return true;
 	}
 
 	@Override
 	public String toString() {
 
-		return "esse objeto é uma conta com saldo R$" + this.saldo;
+		return "Conta de " + this.dono +  " com saldo R$" + this.saldo;
 	}
 
 	public boolean saca(double quantidade) {
