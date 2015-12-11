@@ -34,7 +34,7 @@ public class Data {
         return true;
     }
 	
-	String getFormatada(){
+	public String getFormatada(){
 		return this.dia + "/" + this.mes + "/" + this.ano; 
 	}
 	

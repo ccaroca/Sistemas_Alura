@@ -1,10 +1,18 @@
-package br.com.caelum.empresa;
+package br.com.caelum.empresa.modelo;
+
+import java.util.Calendar;
+
+import br.com.caelum.empresa.Autenticavel;
 
 public class Gerente extends Funcionario implements Autenticavel {
 
 	public Gerente(String nome, double salario) {
 		super(nome, salario);
 
+	}
+
+	public Gerente(String nome, int i, Calendar nascimento) {
+		super(nome, i, nascimento);
 	}
 
 	int senha;

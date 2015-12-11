@@ -1,4 +1,4 @@
-package br.com.caelum.empresa;
+package br.com.caelum.empresa.modelo;
 
 public class Empresa {
 

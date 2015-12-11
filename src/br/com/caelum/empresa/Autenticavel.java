@@ -1,6 +1,7 @@
 package br.com.caelum.empresa;
-interface Autenticavel {
+public interface Autenticavel {
 
     boolean autentica(int senha);
 
+   
 }

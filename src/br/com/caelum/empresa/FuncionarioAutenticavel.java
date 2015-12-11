@@ -1,4 +1,7 @@
 package br.com.caelum.empresa;
+
+import br.com.caelum.empresa.modelo.Funcionario;
+
 public class FuncionarioAutenticavel extends Funcionario {
 
 	public FuncionarioAutenticavel(String nome, double salario) {
@@ -12,6 +15,7 @@ public class FuncionarioAutenticavel extends Funcionario {
 	}
 
 	@Override
+	public
 	double getBonificacao() {
 		return this.salario * 0.3;
 	}

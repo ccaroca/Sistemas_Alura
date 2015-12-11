@@ -1,5 +1,7 @@
 package br.com.caelum.empresa;
 
+import br.com.caelum.empresa.modelo.Funcionario;
+
 public class ControleDeBonificacoes {
 
 	private double totalDeBonificacoes = 0;

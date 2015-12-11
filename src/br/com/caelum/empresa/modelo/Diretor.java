@@ -1,4 +1,6 @@
-package br.com.caelum.empresa;
+package br.com.caelum.empresa.modelo;
+
+import br.com.caelum.empresa.Autenticavel;
 
 public class Diretor extends Funcionario implements Autenticavel {
 
@@ -10,6 +12,7 @@ public class Diretor extends Funcionario implements Autenticavel {
 	
 
 	@Override
+	public
 	double getBonificacao() {
 		return this.salario * 0.3;
 	}

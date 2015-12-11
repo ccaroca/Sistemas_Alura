@@ -1,36 +1,34 @@
 package br.com.caelum;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+import java.util.TimeZone;
 
-import br.com.caelum.loja_virtual.ConnectionPool;
-import br.com.caelum.loja_virtual.modelo.Produto;
-import br.com.caelum.loja_virtual.modelo.ProdutosDAO;
+import br.com.caelum.empresa.modelo.Funcionario;
+import br.com.caelum.empresa.modelo.Gasto;
+import br.com.caelum.empresa.modelo.Gerente;
 
 public class Programa {
 
-	public static void main(String[] args) throws IOException,
-			InterruptedException, SQLException {
+	public static void main(String[] args) {
 
-		Produto mesa = new Produto("Mesa 2 Azul", "Mesa com 8 pés");
+		Locale locale1 = Locale.US;
+		TimeZone tz1 = TimeZone.getTimeZone("GMT");
+		Calendar hoje = Calendar.getInstance(tz1, locale1);
+		GregorianCalendar nascimento = new GregorianCalendar(1989, 3, 14);
+		GregorianCalendar nascimento2 = new GregorianCalendar(1985, 7, 2);
+		
+		Funcionario funcionario = new Gerente("Vinícius", 9, nascimento);
+		Funcionario funcionario1 = new Gerente("Caio", 10, nascimento2);
+		Funcionario funcionario11 = new Gerente("Joao", 11, nascimento);
 
-		try (Connection conexao = new ConnectionPool().getConnection()) {
-			conexao.setAutoCommit(false);
-			ProdutosDAO dao = new ProdutosDAO(conexao);
-			dao.salva(mesa);
-			dao.listaProdutos();
-			List<Produto> produtos = dao.lista();
-            for (Produto produto : produtos) {
-                System.out.println("Existe o produto: " + produto);
-            }
+		Gasto gasto = new Gasto(40.0, "taxi", funcionario, hoje);
+		Gasto gasto1 = new Gasto(4.0, "onibus", funcionario1, nascimento2);
+		Gasto gasto11 = new Gasto(400.0, "aviao", funcionario11, nascimento);
 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-
-		}
-
+		System.out.println(gasto);
+		System.out.println(gasto1);
+		System.out.println(gasto11);
 	}
-
 }
