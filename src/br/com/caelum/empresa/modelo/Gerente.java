@@ -15,6 +15,31 @@ public class Gerente extends Funcionario implements Autenticavel {
 		super(nome, i, nascimento);
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + numeroDeFuncionariosGerenciados;
+		result = prime * result + senha;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Gerente other = (Gerente) obj;
+		if (numeroDeFuncionariosGerenciados != other.numeroDeFuncionariosGerenciados)
+			return false;
+		if (senha != other.senha)
+			return false;
+		return true;
+	}
+
 	int senha;
 	int numeroDeFuncionariosGerenciados;
 
