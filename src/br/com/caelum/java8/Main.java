@@ -3,6 +3,7 @@ package br.com.caelum.java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.stream.Stream;
 
 public class Main {
@@ -30,6 +31,8 @@ package br.com.caelum.java8;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+=======
+>>>>>>> branch 'master' of https://github.com/ccaroca/Sistemas_Alura.git
 import java.util.Optional;
 import java.util.stream.Collectors;
 

@@ -2,6 +2,7 @@ package br.com.caelum.java8;
 
 public class Curso {
 	private String nome;
+<<<<<<< HEAD
     private int alunos;
 
     public Curso(String nome, int alunos) {
@@ -210,6 +211,8 @@ package br.com.caelum.java8;
 
 public class Curso {
 	private String nome;
+=======
+>>>>>>> branch 'master' of https://github.com/ccaroca/Sistemas_Alura.git
 	private int alunos;
 
 	public Curso(String nome, int alunos) {
